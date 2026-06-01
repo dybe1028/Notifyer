@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2026 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="152"
+    android:viewportHeight="159.46875">
+  <group android:scaleX="0.21922791"
+      android:scaleY="0.23"
+      android:translateX="59.33868"
+      android:translateY="61.39547">
+    <group android:translateY="128.32031">
+      <path android:pathData="M-1.90625,-95.34375L23.984375,-95.34375L82.265625,-23.84375L82.265625,-78.828125Q82.265625,-87.609375,80.296875,-89.796875Q77.703125,-92.75,72.078125,-92.75L68.765625,-92.75L68.765625,-95.34375L101.953125,-95.34375L101.953125,-92.75L98.578125,-92.75Q92.53125,-92.75,90,-89.09375Q88.453125,-86.84375,88.453125,-78.828125L88.453125,1.546875L85.921875,1.546875L23.0625,-75.234375L23.0625,-16.53125Q23.0625,-7.734375,24.96875,-5.5625Q27.640625,-2.609375,33.1875,-2.609375L36.5625,-2.609375L36.5625,-0L3.375,-0L3.375,-2.609375L6.6875,-2.609375Q12.796875,-2.609375,15.328125,-6.265625Q16.875,-8.515625,16.875,-16.53125L16.875,-82.828125Q12.734375,-87.6875,10.578125,-89.234375Q8.4375,-90.78125,4.296875,-92.109375Q2.25,-92.75,-1.90625,-92.75L-1.90625,-95.34375Z"
+          android:fillColor="#FFFFFF"/>
+      <path android:pathData="M127.34375,-66.3125L127.34375,-51.828125Q135.4375,-66.3125,143.9375,-66.3125Q147.8125,-66.3125,150.34375,-63.953125Q152.875,-61.59375,152.875,-58.5Q152.875,-55.765625,151.04688,-53.859375Q149.21875,-51.96875,146.6875,-51.96875Q144.21875,-51.96875,141.15625,-54.390625Q138.10938,-56.8125,136.625,-56.8125Q135.35938,-56.8125,133.89062,-55.40625Q130.71875,-52.53125,127.34375,-45.921875L127.34375,-15.046875Q127.34375,-9.703125,128.6875,-6.96875Q129.59375,-5.0625,131.90625,-3.796875Q134.23438,-2.53125,138.59375,-2.53125L138.59375,0L105.625,0L105.625,-2.53125Q110.546875,-2.53125,112.9375,-4.078125Q114.6875,-5.203125,115.390625,-7.671875Q115.75,-8.859375,115.75,-14.484375L115.75,-39.453125Q115.75,-50.703125,115.28125,-52.84375Q114.828125,-54.984375,113.59375,-55.96875Q112.375,-56.953125,110.546875,-56.953125Q108.359375,-56.953125,105.625,-55.90625L104.921875,-58.4375L124.390625,-66.3125L127.34375,-66.3125Z"
+          android:fillColor="#FFFFFF"/>
+    </group>
+  </group>
+</vector>
