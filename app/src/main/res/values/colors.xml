@@ -21,4 +21,14 @@
     <color name="surfaceVariant">#DFE2EB</color>
     <color name="onSurfaceVariant">#43474E</color>
     <color name="outline">#73777F</color>
+
+    <!-- App palette (centralised so a colour changes in one place) -->
+    <color name="app_background">#F5F8FF</color>
+    <color name="app_surface">#FFFFFF</color>
+    <color name="app_accent">#3B82F6</color>
+    <color name="text_primary">#111111</color>
+    <color name="text_secondary">#666666</color>
+    <color name="text_hint">#999999</color>
+    <color name="text_empty">#888888</color>
+    <color name="destructive">#E53935</color>
 </resources>

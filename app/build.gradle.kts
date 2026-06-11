@@ -3,19 +3,24 @@ plugins {
 }
 
 android {
-    namespace = "com.example.notifyer"
+    namespace = "com.dybe.notifyer"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
         }
     }
+    buildToolsVersion = "36.1.0"
+
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
-        applicationId = "com.example.notifyer"
+        applicationId = "com.dybe.notifyer"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -1,3 +1,63 @@
 <resources>
     <string name="app_name">Notifyer</string>
+    <string name="notification_title">Notifyer</string>
+    <string name="app_subtitle">Your Timers</string>
+    <string name="empty_state">No timers yet</string>
+    <string name="empty_hint">Tap + to add your first reminder</string>
+    <string name="add_reminder">Add reminder</string>
+    <string name="app_credit">Notifyer v%1$s beta • by DyBe</string>
+
+    <string name="choose_type_title">Choose Reminder Type</string>
+    <string name="type_timer">Countdown Timer</string>
+    <string name="type_schedule">Schedule Reminder</string>
+
+    <string name="action_run">Run</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+
+    <string name="title_new_timer">New Timer</string>
+    <string name="title_new_schedule">New Schedule</string>
+    <string name="hint_message">Message</string>
+    <string name="hint_date">Date</string>
+    <string name="hint_time">Time</string>
+
+    <string name="delete_title">Delete Reminder</string>
+    <string name="delete_message">Are you sure?</string>
+    <string name="selected_count">%1$d selected</string>
+    <string name="delete_selected_message">Delete %1$d selected reminder(s)?</string>
+
+    <string name="saved">Saved</string>
+    <string name="schedule_saved">Schedule saved</string>
+    <string name="error_invalid_input">Invalid input</string>
+    <string name="error_past_time">Time must be in the future</string>
+    <string name="reminder_scheduled_in">Reminder set in %1$d s</string>
+
+    <string name="item_timer">%1$s  (%2$s)</string>
+    <string name="item_timer_running">%1$s  •  scheduled</string>
+    <string name="item_schedule">%1$s\n⏰ %2$s</string>
+    <string name="item_schedule_repeat">%1$s\n⏰ %2$s · 🔁 %3$s</string>
+
+    <string name="hint_duration">Duration</string>
+    <string name="repeat_label">Repeat</string>
+
+    <string name="dur_seconds">%1$d s</string>
+    <string name="dur_minutes">%1$d m</string>
+    <string name="dur_hours">%1$d h</string>
+
+    <string name="repeat_daily">Daily</string>
+    <string name="repeat_weekly">Weekly</string>
+
+    <string-array name="time_units">
+        <item>Seconds</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+    </string-array>
+
+    <string-array name="repeat_modes">
+        <item>None</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+    </string-array>
 </resources>

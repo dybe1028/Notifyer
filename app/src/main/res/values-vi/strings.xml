@@ -1,0 +1,62 @@
+<resources>
+    <string name="notification_title">Notifyer</string>
+    <string name="app_subtitle">Lời nhắc của bạn</string>
+    <string name="empty_state">Chưa có lời nhắc nào</string>
+    <string name="empty_hint">Nhấn + để tạo lời nhắc đầu tiên</string>
+    <string name="add_reminder">Thêm lời nhắc</string>
+    <string name="app_credit">Notifyer v%1$s beta • bởi DyBe</string>
+
+    <string name="choose_type_title">Chọn loại nhắc</string>
+    <string name="type_timer">Hẹn giờ đếm ngược</string>
+    <string name="type_schedule">Nhắc theo lịch</string>
+
+    <string name="action_run">Chạy</string>
+    <string name="action_edit">Sửa</string>
+    <string name="action_delete">Xóa</string>
+    <string name="action_cancel">Hủy</string>
+    <string name="action_save">Lưu</string>
+
+    <string name="title_new_timer">Hẹn giờ mới</string>
+    <string name="title_new_schedule">Lịch nhắc mới</string>
+    <string name="hint_message">Nội dung</string>
+    <string name="hint_date">Ngày</string>
+    <string name="hint_time">Giờ</string>
+
+    <string name="delete_title">Xóa lời nhắc</string>
+    <string name="delete_message">Bạn có chắc không?</string>
+    <string name="selected_count">Đã chọn %1$d</string>
+    <string name="delete_selected_message">Xóa %1$d lời nhắc đã chọn?</string>
+
+    <string name="saved">Đã lưu</string>
+    <string name="schedule_saved">Đã lưu lịch nhắc</string>
+    <string name="error_invalid_input">Dữ liệu không hợp lệ</string>
+    <string name="error_past_time">Thời gian phải ở tương lai</string>
+    <string name="reminder_scheduled_in">Sẽ nhắc sau %1$d giây</string>
+
+    <string name="item_timer">%1$s  (%2$s)</string>
+    <string name="item_timer_running">%1$s  •  đã hẹn</string>
+    <string name="item_schedule">%1$s\n⏰ %2$s</string>
+    <string name="item_schedule_repeat">%1$s\n⏰ %2$s · 🔁 %3$s</string>
+
+    <string name="hint_duration">Thời lượng</string>
+    <string name="repeat_label">Lặp lại</string>
+
+    <string name="dur_seconds">%1$d giây</string>
+    <string name="dur_minutes">%1$d phút</string>
+    <string name="dur_hours">%1$d giờ</string>
+
+    <string name="repeat_daily">Hàng ngày</string>
+    <string name="repeat_weekly">Hàng tuần</string>
+
+    <string-array name="time_units">
+        <item>Giây</item>
+        <item>Phút</item>
+        <item>Giờ</item>
+    </string-array>
+
+    <string-array name="repeat_modes">
+        <item>Không lặp</item>
+        <item>Hàng ngày</item>
+        <item>Hàng tuần</item>
+    </string-array>
+</resources>

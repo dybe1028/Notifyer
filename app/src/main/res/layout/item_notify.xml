@@ -3,16 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:gravity="center_vertical"
     android:padding="16dp"
     android:layout_marginBottom="12dp"
-    android:background="#FFFFFF">
+    android:background="@drawable/bg_card"
+    android:foreground="?attr/selectableItemBackground">
 
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
+        android:clickable="false"
+        android:focusable="false"
         android:layout_marginEnd="8dp" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="14dp"
+        android:src="@drawable/ic_timer"
+        android:contentDescription="@null" />
 
     <TextView
         android:id="@+id/txtItem"
@@ -20,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Timer"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="#111111" />
+        android:textColor="@color/text_primary" />
 </LinearLayout>

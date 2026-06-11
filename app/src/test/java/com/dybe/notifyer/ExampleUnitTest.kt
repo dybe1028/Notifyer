@@ -1,4 +1,4 @@
-package com.example.notifyer
+package com.dybe.notifyer
 
 import org.junit.Test
 
