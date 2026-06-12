@@ -91,10 +91,11 @@ Created by DyBe
 
 Special thanks to:
 
+* thanhmobiledev
 * Android Studio
 * Kotlin
-* Coffee
-* Stack Overflow
+* ChatGPT
+* Claude
 * Random debugging sessions
 * Dell Latitude fighting for its life
 
