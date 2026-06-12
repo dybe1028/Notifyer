@@ -16,6 +16,15 @@
     <string name="action_delete">Xóa</string>
     <string name="action_cancel">Hủy</string>
     <string name="action_save">Lưu</string>
+    <string name="action_done">Xong</string>
+
+    <string name="theme_title">Giao diện</string>
+    <string name="theme_button_desc">Giao diện</string>
+    <string name="theme_mode_label">Chế độ</string>
+    <string name="theme_accent_label">Tông màu</string>
+    <string name="mode_system">Hệ thống</string>
+    <string name="mode_light">Sáng</string>
+    <string name="mode_dark">Tối</string>
 
     <string name="title_new_timer">Hẹn giờ mới</string>
     <string name="title_new_schedule">Lịch nhắc mới</string>
@@ -52,6 +61,7 @@
     <string name="watch_service_text">Đang chờ app được mở</string>
 
     <string name="hint_duration">Thời lượng</string>
+    <string name="hint_unit">Đơn vị</string>
     <string name="repeat_label">Lặp lại</string>
 
     <string name="dur_seconds">%1$d giây</string>

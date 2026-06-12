@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
@@ -16,6 +17,19 @@
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="@color/text_primary" />
+
+    <!-- Theme picker -->
+    <ImageButton
+        android:id="@+id/btnTheme"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/txtTitle"
+        android:layout_alignBottom="@id/txtTitle"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_palette"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/theme_button_desc" />
 
     <!-- Subtitle -->
     <TextView
@@ -95,7 +109,7 @@
         android:layout_marginBottom="18dp"
         android:contentDescription="@string/add_reminder"
         android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="@color/app_accent"
+        app:backgroundTint="?attr/colorPrimary"
         app:tint="@color/white" />
 
 </RelativeLayout>

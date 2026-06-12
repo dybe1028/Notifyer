@@ -19,4 +19,25 @@
     </style>
 
     <style name="Theme.Notifyer" parent="Base.Theme.Notifyer" />
+
+    <!-- Accent overlays, applied at runtime per the user's choice. -->
+    <style name="ThemeOverlay.Notifyer.Blue" parent="">
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.Notifyer.Green" parent="">
+        <item name="colorPrimary">@color/accent_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.Notifyer.Purple" parent="">
+        <item name="colorPrimary">@color/accent_purple</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.Notifyer.Orange" parent="">
+        <item name="colorPrimary">@color/accent_orange</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
 </resources>

@@ -115,6 +115,10 @@ SharedPreferences, no DB, no large frameworks.
   Material popup with icons and a destructive-red Delete, dropped right under the
   tapped row (replaces the plain `PopupMenu`); colours centralised in `colors.xml`;
   remaining create-screen strings extracted. Layout/theme only — create/edit logic unchanged.
+* **Theme picker** (user-requested extra): a top-bar palette button opens a chooser for
+  Light / Dark / System mode and four accent colours, persisted and applied at startup
+  (`NotifyerApp` + `BaseActivity` + theme overlays). Added a dark palette (`values-night`)
+  and proper status-bar inset handling on the home screen.
 
 ## Supporting classes added (small, single-purpose — not a framework)
 

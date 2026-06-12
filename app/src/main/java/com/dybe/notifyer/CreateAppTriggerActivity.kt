@@ -14,7 +14,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class CreateAppTriggerActivity : AppCompatActivity() {
+class CreateAppTriggerActivity : BaseActivity() {
 
     private lateinit var repository: ReminderRepository
     private lateinit var edtApp: EditText

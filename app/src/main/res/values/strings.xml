@@ -17,6 +17,15 @@
     <string name="action_delete">Delete</string>
     <string name="action_cancel">Cancel</string>
     <string name="action_save">Save</string>
+    <string name="action_done">Done</string>
+
+    <string name="theme_title">Theme</string>
+    <string name="theme_button_desc">Theme</string>
+    <string name="theme_mode_label">Mode</string>
+    <string name="theme_accent_label">Accent color</string>
+    <string name="mode_system">System</string>
+    <string name="mode_light">Light</string>
+    <string name="mode_dark">Dark</string>
 
     <string name="title_new_timer">New Timer</string>
     <string name="title_new_schedule">New Schedule</string>
@@ -53,6 +62,7 @@
     <string name="watch_service_text">Watching for app triggers</string>
 
     <string name="hint_duration">Duration</string>
+    <string name="hint_unit">Unit</string>
     <string name="repeat_label">Repeat</string>
 
     <string name="dur_seconds">%1$d s</string>

@@ -31,4 +31,10 @@
     <color name="text_hint">#999999</color>
     <color name="text_empty">#888888</color>
     <color name="destructive">#E53935</color>
+
+    <!-- Selectable accent palettes (work on both light and dark) -->
+    <color name="accent_blue">#3B82F6</color>
+    <color name="accent_green">#16A34A</color>
+    <color name="accent_purple">#7C3AED</color>
+    <color name="accent_orange">#EA580C</color>
 </resources>

@@ -1,15 +1,13 @@
 package com.dybe.notifyer
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Spinner
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import java.text.SimpleDateFormat
@@ -17,13 +15,14 @@ import java.util.Calendar
 import java.util.Locale
 import java.util.TimeZone
 
-class CreateScheduleActivity : AppCompatActivity() {
+class CreateScheduleActivity : BaseActivity() {
 
     private lateinit var repository: ReminderRepository
     private val selected: Calendar = Calendar.getInstance()
     private var hasDate = false
     private var hasTime = false
     private var editing: Reminder? = null
+    private var repeatIndex = 0
 
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
     private val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
@@ -38,11 +37,10 @@ class CreateScheduleActivity : AppCompatActivity() {
         val edtDate = findViewById<EditText>(R.id.edtDate)
         val edtTime = findViewById<EditText>(R.id.edtTime)
         val btnSave = findViewById<Button>(R.id.btnSaveSchedule)
-        val spinnerRepeat = findViewById<Spinner>(R.id.spinnerRepeat)
-
-        spinnerRepeat.adapter = ArrayAdapter.createFromResource(
-            this, R.array.repeat_modes, android.R.layout.simple_spinner_item
-        ).apply { setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) }
+        val spinnerRepeat = findViewById<MaterialAutoCompleteTextView>(R.id.spinnerRepeat)
+        val repeatModes = resources.getStringArray(R.array.repeat_modes)
+        spinnerRepeat.setText(repeatModes[0], false)
+        spinnerRepeat.setOnItemClickListener { _, _, position, _ -> repeatIndex = position }
 
         // Pickers guarantee valid date/time instead of free-text parsing.
         edtDate.isFocusable = false
@@ -52,7 +50,8 @@ class CreateScheduleActivity : AppCompatActivity() {
             editing = repository.findById(id)
             editing?.let { reminder ->
                 edtMessage.setText(reminder.message)
-                spinnerRepeat.setSelection(reminder.repeat.ordinal)
+                repeatIndex = reminder.repeat.ordinal
+                spinnerRepeat.setText(repeatModes[repeatIndex], false)
                 if (reminder.triggerAtMillis > 0L) {
                     selected.timeInMillis = reminder.triggerAtMillis
                     hasDate = true
@@ -117,7 +116,7 @@ class CreateScheduleActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val repeat = RepeatMode.entries[spinnerRepeat.selectedItemPosition]
+            val repeat = RepeatMode.entries[repeatIndex]
             val current = editing
             val reminder = current?.copy(
                 message = message,

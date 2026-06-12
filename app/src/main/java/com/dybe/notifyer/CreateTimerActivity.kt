@@ -1,19 +1,18 @@
 package com.dybe.notifyer
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Spinner
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
-class CreateTimerActivity : AppCompatActivity() {
+class CreateTimerActivity : BaseActivity() {
 
     private lateinit var repository: ReminderRepository
     private var editing: Reminder? = null
+    private var unitIndex = 0
 
-    /** Spinner index -> multiplier to convert the entered amount into canonical seconds. */
+    /** Unit index -> multiplier to convert the entered amount into canonical seconds. */
     private val unitMultipliers = longArrayOf(1L, 60L, 3600L) // seconds, minutes, hours
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,20 +23,20 @@ class CreateTimerActivity : AppCompatActivity() {
 
         val edtMessage = findViewById<EditText>(R.id.edtMessage)
         val edtAmount = findViewById<EditText>(R.id.edtAmount)
-        val spinnerUnit = findViewById<Spinner>(R.id.spinnerUnit)
+        val unitDropdown = findViewById<MaterialAutoCompleteTextView>(R.id.spinnerUnit)
         val btnSave = findViewById<Button>(R.id.btnSaveTimer)
 
-        spinnerUnit.adapter = ArrayAdapter.createFromResource(
-            this, R.array.time_units, android.R.layout.simple_spinner_item
-        ).apply { setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) }
+        val units = resources.getStringArray(R.array.time_units)
+        unitDropdown.setText(units[0], false)
+        unitDropdown.setOnItemClickListener { _, _, position, _ -> unitIndex = position }
 
         intent.getStringExtra(Constants.EXTRA_REMINDER_ID)?.let { id ->
             editing = repository.findById(id)
             editing?.let { reminder ->
                 edtMessage.setText(reminder.message)
-                val unitIndex = largestUnitIndex(reminder.seconds)
+                unitIndex = largestUnitIndex(reminder.seconds)
                 edtAmount.setText((reminder.seconds / unitMultipliers[unitIndex]).toString())
-                spinnerUnit.setSelection(unitIndex)
+                unitDropdown.setText(units[unitIndex], false)
             }
         }
 
@@ -50,7 +49,7 @@ class CreateTimerActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val seconds = amount * unitMultipliers[spinnerUnit.selectedItemPosition]
+            val seconds = amount * unitMultipliers[unitIndex]
 
             val current = editing
             if (current != null) {

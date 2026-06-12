@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark variants of the app palette; same names override the light values at night. -->
+    <color name="app_background">#0F1115</color>
+    <color name="app_surface">#1C1F26</color>
+    <color name="text_primary">#ECEDEE</color>
+    <color name="text_secondary">#B4B8BF</color>
+    <color name="text_hint">#7A7F87</color>
+    <color name="text_empty">#8A8F97</color>
+</resources>

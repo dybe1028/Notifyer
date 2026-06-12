@@ -42,7 +42,8 @@ Originally started as a simple countdown reminder project, Notifyer has grown in
 ### UI
 
 * Material 3 interface
-* Outlined text fields and Material date/time pickers
+* Theme picker: Light / Dark / System mode and four accent colours
+* Outlined text fields, dropdown menus, and Material date/time pickers
 * Custom action popup (Run / Edit / Delete) right under the tapped reminder
 * Multi-language: English and Vietnamese
 * Toast feedback and smooth list animations
