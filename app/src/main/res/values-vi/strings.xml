@@ -9,6 +9,7 @@
     <string name="choose_type_title">Chọn loại nhắc</string>
     <string name="type_timer">Hẹn giờ đếm ngược</string>
     <string name="type_schedule">Nhắc theo lịch</string>
+    <string name="type_app_trigger">Theo ứng dụng</string>
 
     <string name="action_run">Chạy</string>
     <string name="action_edit">Sửa</string>
@@ -37,6 +38,18 @@
     <string name="item_timer_running">%1$s  •  đã hẹn</string>
     <string name="item_schedule">%1$s\n⏰ %2$s</string>
     <string name="item_schedule_repeat">%1$s\n⏰ %2$s · 🔁 %3$s</string>
+    <string name="item_app_trigger">📱 %1$s → %2$s</string>
+    <string name="item_app_trigger_count">📱 %1$s ×%2$d → %3$s</string>
+
+    <string name="title_new_app_trigger">Nhắc theo app mới</string>
+    <string name="hint_app">Ứng dụng</string>
+    <string name="hint_threshold">Nhắc sau mỗi N lần mở</string>
+    <string name="choose_app">Chọn ứng dụng</string>
+    <string name="usage_access_title">Cần quyền Usage access</string>
+    <string name="usage_access_message">Để nhắc khi bạn mở một app, Notifyer cần quyền Usage access. Mở cài đặt để bật?</string>
+    <string name="action_open_settings">Mở cài đặt</string>
+    <string name="watch_service_title">Notifyer đang theo dõi</string>
+    <string name="watch_service_text">Đang chờ app được mở</string>
 
     <string name="hint_duration">Thời lượng</string>
     <string name="repeat_label">Lặp lại</string>

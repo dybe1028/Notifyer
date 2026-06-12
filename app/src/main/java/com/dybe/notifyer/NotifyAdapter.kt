@@ -55,7 +55,11 @@ class NotifyAdapter(
         val reminder = items[position]
         holder.txtItem.text = describe(holder.itemView.context, reminder)
         holder.icon.setImageResource(
-            if (reminder.type == ReminderType.TIMER) R.drawable.ic_timer else R.drawable.ic_schedule
+            when (reminder.type) {
+                ReminderType.TIMER -> R.drawable.ic_timer
+                ReminderType.SCHEDULE -> R.drawable.ic_schedule
+                ReminderType.APP_TRIGGER -> R.drawable.ic_app_trigger
+            }
         )
 
         holder.checkbox.visibility = if (selectionMode) View.VISIBLE else View.GONE
@@ -123,6 +127,16 @@ class NotifyAdapter(
                 )
             }
         }
+
+        ReminderType.APP_TRIGGER ->
+            if (reminder.appOpenThreshold > 1) {
+                context.getString(
+                    R.string.item_app_trigger_count,
+                    reminder.appLabel, reminder.appOpenThreshold, reminder.message
+                )
+            } else {
+                context.getString(R.string.item_app_trigger, reminder.appLabel, reminder.message)
+            }
     }
 
     /** Formats canonical seconds into the largest exact unit (h / m / s). */

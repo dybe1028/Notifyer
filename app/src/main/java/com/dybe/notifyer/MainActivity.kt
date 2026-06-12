@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         reloadReminders()
+        AppWatchService.sync(this)
     }
 
     private fun reloadReminders() {
@@ -101,6 +102,7 @@ class MainActivity : AppCompatActivity() {
         val target = when (reminder.type) {
             ReminderType.TIMER -> CreateTimerActivity::class.java
             ReminderType.SCHEDULE -> CreateScheduleActivity::class.java
+            ReminderType.APP_TRIGGER -> CreateAppTriggerActivity::class.java
         }
         startActivity(
             Intent(this, target).putExtra(Constants.EXTRA_REMINDER_ID, reminder.id)
@@ -115,6 +117,7 @@ class MainActivity : AppCompatActivity() {
                 ReminderScheduler.cancel(this, reminder)
                 repository.delete(reminder.id)
                 reloadReminders()
+                AppWatchService.sync(this)
             }
             .setNegativeButton(R.string.action_cancel, null)
             .show()
@@ -150,6 +153,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 actionMode?.finish()
                 reloadReminders()
+                AppWatchService.sync(this)
             }
             .setNegativeButton(R.string.action_cancel, null)
             .show()
@@ -183,15 +187,16 @@ class MainActivity : AppCompatActivity() {
     private fun showCreateTypeDialog() {
         val options = arrayOf(
             getString(R.string.type_timer),
-            getString(R.string.type_schedule)
+            getString(R.string.type_schedule),
+            getString(R.string.type_app_trigger)
         )
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.choose_type_title)
             .setItems(options) { _, which ->
-                val target = if (which == 0) {
-                    CreateTimerActivity::class.java
-                } else {
-                    CreateScheduleActivity::class.java
+                val target = when (which) {
+                    0 -> CreateTimerActivity::class.java
+                    1 -> CreateScheduleActivity::class.java
+                    else -> CreateAppTriggerActivity::class.java
                 }
                 startActivity(Intent(this, target))
             }

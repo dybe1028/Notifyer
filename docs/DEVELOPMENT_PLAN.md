@@ -98,6 +98,15 @@ SharedPreferences, no DB, no large frameworks.
   hours (stored as canonical seconds, displayed in the largest exact unit); schedules
   support daily / weekly repeat, re-armed by the receiver after each fire. No model
   rewrite — added one optional `repeat` enum field (old data defaults to NONE).
+* **Phase 3 — App-trigger reminders**: a new `APP_TRIGGER` reminder type;
+  `AppWatchService` (foreground service) polls `UsageStatsManager` every 2s and fires
+  the reminder when the chosen app comes to the foreground. Uses the special
+  `PACKAGE_USAGE_STATS` permission (user grants it in Settings); the watcher runs only
+  while a trigger exists and access is granted, and restarts after reboot.
+* **Phase 4 — Usage-based reminders**: the same app-trigger carries an
+  `appOpenThreshold` (+ running `appOpenCount`). The watcher counts opens of the
+  watched app and fires once every N opens, then resets — "every Nth open". N = 1 is
+  the plain Phase 3 trigger. One feature, no extra service.
 * **Phase 5 — UX polish**: empty state with a bell icon + CTA hint; list items show a
   per-type icon on rounded cards with a touch ripple + a load animation; create screens
   use Material 3 outlined text fields (date/time carry leading icons); date/time use
@@ -172,6 +181,10 @@ Implementation should eventually use AlarmManager.
 
 ## Phase 3 - App Trigger Reminders
 
+> Status: **implemented** — UsageStats + a foreground watcher service. Pick an app +
+> message; the service polls every 2s and fires the reminder when that app opens.
+> Needs the special "Usage access" permission (deep-linked to Settings).
+
 Requirements:
 
 Allow users to configure reminders that appear when specific applications are opened.
@@ -185,6 +198,9 @@ This feature should be designed carefully due to Android permission limitations.
 ---
 
 ## Phase 4 - Usage-Based Reminders
+
+> Status: **implemented** — folded into the app-trigger as an "open count threshold".
+> Set "remind every N opens"; the watcher counts opens and fires every Nth one.
 
 Requirements:
 

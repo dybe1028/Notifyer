@@ -5,8 +5,8 @@ import android.content.Context
 import android.content.Intent
 
 /**
- * Alarms are cleared on reboot. This re-registers every still-pending reminder
- * so scheduled notifications survive a restart.
+ * Alarms and the app-watcher are cleared on reboot. This re-arms every still-pending
+ * reminder and restarts the watcher so everything survives a restart.
  */
 class BootReceiver : BroadcastReceiver() {
 
@@ -17,5 +17,7 @@ class BootReceiver : BroadcastReceiver() {
         ReminderRepository(context).getAll()
             .filter { it.triggerAtMillis > now }
             .forEach { ReminderScheduler.schedule(context, it) }
+
+        AppWatchService.sync(context)
     }
 }

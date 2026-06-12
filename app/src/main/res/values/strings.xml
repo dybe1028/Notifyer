@@ -10,6 +10,7 @@
     <string name="choose_type_title">Choose Reminder Type</string>
     <string name="type_timer">Countdown Timer</string>
     <string name="type_schedule">Schedule Reminder</string>
+    <string name="type_app_trigger">App Trigger</string>
 
     <string name="action_run">Run</string>
     <string name="action_edit">Edit</string>
@@ -38,6 +39,18 @@
     <string name="item_timer_running">%1$s  •  scheduled</string>
     <string name="item_schedule">%1$s\n⏰ %2$s</string>
     <string name="item_schedule_repeat">%1$s\n⏰ %2$s · 🔁 %3$s</string>
+    <string name="item_app_trigger">📱 %1$s → %2$s</string>
+    <string name="item_app_trigger_count">📱 %1$s ×%2$d → %3$s</string>
+
+    <string name="title_new_app_trigger">New App Trigger</string>
+    <string name="hint_app">App</string>
+    <string name="hint_threshold">Remind every N opens</string>
+    <string name="choose_app">Choose app</string>
+    <string name="usage_access_title">Usage access needed</string>
+    <string name="usage_access_message">To remind you when an app opens, Notifyer needs Usage access. Open settings to turn it on?</string>
+    <string name="action_open_settings">Open settings</string>
+    <string name="watch_service_title">Notifyer is watching</string>
+    <string name="watch_service_text">Watching for app triggers</string>
 
     <string name="hint_duration">Duration</string>
     <string name="repeat_label">Repeat</string>

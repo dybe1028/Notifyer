@@ -18,9 +18,15 @@ Originally started as a simple countdown reminder project, Notifyer has grown in
 * Recurring reminders: daily or weekly
 * Fires via AlarmManager even when the app is closed, and re-arms itself after a reboot
 
+### App Triggers
+
+* Fire a reminder when you open a chosen app
+* Or remind every N opens — usage-based (e.g. every 5th time you open an app)
+* Runs a lightweight foreground watcher (needs Usage access, granted in Settings)
+
 ### Reminder Management
 
-* RecyclerView list with a per-type icon (timer / schedule)
+* RecyclerView list with a per-type icon (timer / schedule / app)
 * Floating Action Button (FAB) for creating reminders
 * Multi-select: long-press to select, then bulk delete
 * Automatic refresh when returning to Home
@@ -51,8 +57,6 @@ Originally started as a simple countdown reminder project, Notifyer has grown in
 ### Smart Features
 
 * Birthday greetings
-* App-trigger reminders ("when App X opens, show reminder Y")
-* App-usage based reminders
 * More personalization options
 
 ### Advanced Features
@@ -70,13 +74,14 @@ A more detailed roadmap lives in [docs/DEVELOPMENT_PLAN.md](docs/DEVELOPMENT_PLA
 * RecyclerView
 * SharedPreferences (JSON storage)
 * AlarmManager + BroadcastReceiver
+* UsageStatsManager + foreground service (app triggers)
 * Material 3 (Material Components)
 * Multi-language (vi / en)
 
 ## Development Status
 
 Current Version:
-v0.6 (In Development)
+v0.7 (In Development)
 
 Notifyer is actively developed and may contain bugs, unexpected behavior, and questionable design decisions made at 2 AM.
 

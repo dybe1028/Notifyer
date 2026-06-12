@@ -3,7 +3,7 @@ package com.dybe.notifyer
 import org.json.JSONObject
 import java.util.UUID
 
-enum class ReminderType { TIMER, SCHEDULE }
+enum class ReminderType { TIMER, SCHEDULE, APP_TRIGGER }
 
 enum class RepeatMode { NONE, DAILY, WEEKLY }
 
@@ -14,6 +14,10 @@ enum class RepeatMode { NONE, DAILY, WEEKLY }
  * @property seconds          duration for a TIMER reminder (canonical, always seconds)
  * @property triggerAtMillis  absolute epoch millis the alarm should fire; 0 = not scheduled
  * @property repeat           recurrence for a SCHEDULE reminder; NONE = one-shot
+ * @property packageName      watched app for an APP_TRIGGER reminder; "" = none
+ * @property appLabel         human-readable label of the watched app (cached)
+ * @property appOpenThreshold fire once every N opens of the watched app (1 = every time)
+ * @property appOpenCount     running open counter, reset to 0 after each fire
  */
 data class Reminder(
     val id: String = UUID.randomUUID().toString(),
@@ -21,7 +25,11 @@ data class Reminder(
     val message: String,
     val seconds: Long = 0L,
     val triggerAtMillis: Long = 0L,
-    val repeat: RepeatMode = RepeatMode.NONE
+    val repeat: RepeatMode = RepeatMode.NONE,
+    val packageName: String = "",
+    val appLabel: String = "",
+    val appOpenThreshold: Int = 1,
+    val appOpenCount: Int = 0
 ) {
 
     /** Stable request code for the AlarmManager PendingIntent and the notification id. */
@@ -34,6 +42,10 @@ data class Reminder(
         put("seconds", seconds)
         put("triggerAtMillis", triggerAtMillis)
         put("repeat", repeat.name)
+        put("packageName", packageName)
+        put("appLabel", appLabel)
+        put("appOpenThreshold", appOpenThreshold)
+        put("appOpenCount", appOpenCount)
     }
 
     companion object {
@@ -45,7 +57,11 @@ data class Reminder(
             seconds = json.optLong("seconds", 0L),
             triggerAtMillis = json.optLong("triggerAtMillis", 0L),
             repeat = runCatching { RepeatMode.valueOf(json.optString("repeat")) }
-                .getOrDefault(RepeatMode.NONE)
+                .getOrDefault(RepeatMode.NONE),
+            packageName = json.optString("packageName", ""),
+            appLabel = json.optString("appLabel", ""),
+            appOpenThreshold = json.optInt("appOpenThreshold", 1).coerceAtLeast(1),
+            appOpenCount = json.optInt("appOpenCount", 0)
         )
     }
 }
