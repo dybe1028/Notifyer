@@ -55,6 +55,28 @@ class ReminderRepository(context: Context) {
         saveAll(list)
     }
 
+    fun clearAll() = saveAll(emptyList())
+
+    /** Pretty-printed JSON of all reminders, for the Settings export. */
+    fun exportJson(): String {
+        val array = JSONArray()
+        getAll().forEach { array.put(it.toJson()) }
+        return array.toString(2)
+    }
+
+    /** Replaces all reminders with the parsed array. Returns the count, or -1 on parse error. */
+    fun importJson(raw: String): Int {
+        val array = runCatching { JSONArray(raw) }.getOrNull() ?: return -1
+        val list = mutableListOf<Reminder>()
+        for (i in 0 until array.length()) {
+            runCatching { Reminder.fromJson(array.getJSONObject(i)) }
+                .getOrNull()
+                ?.let { list.add(it) }
+        }
+        saveAll(list)
+        return list.size
+    }
+
     private fun saveAll(list: List<Reminder>) {
         val array = JSONArray()
         list.forEach { array.put(it.toJson()) }

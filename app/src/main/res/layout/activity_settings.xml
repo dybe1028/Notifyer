@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/rootSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_title"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary" />
+
+        <!-- Appearance -->
+        <TextView style="@style/SettingSection" android:text="@string/section_appearance" />
+
+        <LinearLayout android:id="@+id/rowTheme" style="@style/SettingRow">
+            <TextView style="@style/SettingTitle" android:text="@string/setting_theme" />
+            <TextView style="@style/SettingSubtitle" android:text="@string/setting_theme_sub" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/rowLanguage" style="@style/SettingRow">
+            <TextView style="@style/SettingTitle" android:text="@string/setting_language" />
+            <TextView android:id="@+id/langValue" style="@style/SettingSubtitle" />
+        </LinearLayout>
+
+        <!-- Notifications -->
+        <TextView style="@style/SettingSection" android:text="@string/section_notifications" />
+
+        <LinearLayout android:id="@+id/rowSound" style="@style/SettingRow">
+            <TextView style="@style/SettingTitle" android:text="@string/setting_sound" />
+            <TextView style="@style/SettingSubtitle" android:text="@string/setting_sound_sub" />
+        </LinearLayout>
+
+        <!-- Data -->
+        <TextView style="@style/SettingSection" android:text="@string/section_data" />
+
+        <LinearLayout android:id="@+id/rowExport" style="@style/SettingRow">
+            <TextView style="@style/SettingTitle" android:text="@string/setting_export" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/rowImport" style="@style/SettingRow">
+            <TextView style="@style/SettingTitle" android:text="@string/setting_import" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/rowClear" style="@style/SettingRow">
+            <TextView
+                style="@style/SettingTitle"
+                android:text="@string/setting_clear"
+                android:textColor="@color/destructive" />
+        </LinearLayout>
+
+        <!-- About -->
+        <TextView style="@style/SettingSection" android:text="@string/section_about" />
+
+        <LinearLayout android:id="@+id/rowVersion" style="@style/SettingRow">
+            <TextView style="@style/SettingTitle" android:text="@string/setting_version" />
+            <TextView android:id="@+id/versionValue" style="@style/SettingSubtitle" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/rowGithub" style="@style/SettingRow">
+            <TextView style="@style/SettingTitle" android:text="@string/setting_github" />
+            <TextView style="@style/SettingSubtitle" android:text="@string/setting_github_sub" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

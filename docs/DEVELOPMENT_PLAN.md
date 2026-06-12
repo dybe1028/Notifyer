@@ -119,6 +119,14 @@ SharedPreferences, no DB, no large frameworks.
   Light / Dark / System mode and four accent colours, persisted and applied at startup
   (`NotifyerApp` + `BaseActivity` + theme overlays). Added a dark palette (`values-night`)
   and proper status-bar inset handling on the home screen.
+* **Detailed expandable list** (user-requested): each reminder shows a name + a detail
+  line (duration / date-time + repeat / app + open count). Tapping a row expands it in
+  place to reveal Run / Edit / Delete inline — replaces the earlier dropdown popup.
+* **Settings screen** (user-requested): Appearance (theme + in-app language via
+  `AppCompatDelegate.setApplicationLocales`), Notifications (deep-link to the system
+  channel sound/vibration), Data (export/import reminders as JSON via the Storage
+  Access Framework, clear all), and About (version + GitHub). Still SharedPreferences
+  only; no backend. The theme chooser was extracted to a shared `ThemeDialog`.
 
 ## Supporting classes added (small, single-purpose — not a framework)
 

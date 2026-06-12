@@ -9,18 +9,15 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.view.ActionMode
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -71,7 +68,9 @@ class MainActivity : BaseActivity() {
         recycler.adapter = adapter
 
         btnAdd.setOnClickListener { showCreateTypeDialog() }
-        findViewById<ImageButton>(R.id.btnTheme).setOnClickListener { showThemeDialog() }
+        findViewById<ImageButton>(R.id.btnSettings).setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
     }
 
     override fun onResume() {
@@ -207,66 +206,6 @@ class MainActivity : BaseActivity() {
                     else -> CreateAppTriggerActivity::class.java
                 }
                 startActivity(Intent(this, target))
-            }
-            .show()
-    }
-
-    private fun showThemeDialog() {
-        val view = layoutInflater.inflate(R.layout.dialog_theme, null)
-        val modeGroup = view.findViewById<MaterialButtonToggleGroup>(R.id.modeGroup)
-
-        val startMode = ThemePrefs.mode(this)
-        val startAccent = ThemePrefs.accent(this)
-
-        modeGroup.check(
-            when (startMode) {
-                AppCompatDelegate.MODE_NIGHT_NO -> R.id.modeLight
-                AppCompatDelegate.MODE_NIGHT_YES -> R.id.modeDark
-                else -> R.id.modeSystem
-            }
-        )
-        modeGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
-            if (!isChecked) return@addOnButtonCheckedListener
-            ThemePrefs.setMode(
-                this,
-                when (checkedId) {
-                    R.id.modeLight -> AppCompatDelegate.MODE_NIGHT_NO
-                    R.id.modeDark -> AppCompatDelegate.MODE_NIGHT_YES
-                    else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-                }
-            )
-        }
-
-        val swatches = listOf(
-            R.id.swatchBlue to ThemePrefs.ACCENT_BLUE,
-            R.id.swatchGreen to ThemePrefs.ACCENT_GREEN,
-            R.id.swatchPurple to ThemePrefs.ACCENT_PURPLE,
-            R.id.swatchOrange to ThemePrefs.ACCENT_ORANGE
-        )
-        fun renderSelection(selected: Int) {
-            swatches.forEach { (viewId, accent) ->
-                view.findViewById<ImageView>(viewId)
-                    .setImageResource(if (accent == selected) R.drawable.ic_check else 0)
-            }
-        }
-        renderSelection(startAccent)
-        swatches.forEach { (viewId, accent) ->
-            view.findViewById<ImageView>(viewId).setOnClickListener {
-                ThemePrefs.setAccent(this, accent)
-                renderSelection(accent)
-            }
-        }
-
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.theme_title)
-            .setView(view)
-            .setPositiveButton(R.string.action_done, null)
-            .setOnDismissListener {
-                if (ThemePrefs.mode(this) != startMode) {
-                    AppCompatDelegate.setDefaultNightMode(ThemePrefs.mode(this))
-                } else if (ThemePrefs.accent(this) != startAccent) {
-                    recreate()
-                }
             }
             .show()
     }

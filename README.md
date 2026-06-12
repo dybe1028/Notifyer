@@ -26,7 +26,7 @@ Originally started as a simple countdown reminder project, Notifyer has grown in
 
 ### Reminder Management
 
-* RecyclerView list with a per-type icon (timer / schedule / app)
+* Detailed list: each reminder shows its name and details (duration, date/time + repeat, or app + open count) with a per-type icon
 * Floating Action Button (FAB) for creating reminders
 * Multi-select: long-press to select, then bulk delete
 * Automatic refresh when returning to Home
@@ -43,7 +43,7 @@ Originally started as a simple countdown reminder project, Notifyer has grown in
 
 * Material 3 interface
 * Outlined text fields, dropdown menus, and Material date/time pickers
-* Custom action popup (Run / Edit / Delete) right under the tapped reminder
+* Tap a reminder to expand it in place for Run / Edit / Delete
 * Multi-language: English and Vietnamese
 * Toast feedback and smooth list animations
 
@@ -51,7 +51,15 @@ Originally started as a simple countdown reminder project, Notifyer has grown in
 
 * Light, Dark, or System (follows the device) mode
 * Four accent colours: Blue, Green, Purple, Orange
-* Pick from the palette button in the top corner — your choice is saved and applied on the next launch
+* Choose from Settings → Theme — your choice is saved and applied on the next launch
+
+### Settings
+
+* In-app language switch: System / English / Vietnamese
+* Shortcut to the system notification sound & vibration settings
+* Export / import reminders as a JSON file (backup without the cloud)
+* Clear all reminders
+* About: version and source-code link
 
 ### Easter Eggs
 
@@ -87,7 +95,7 @@ A more detailed roadmap lives in [docs/DEVELOPMENT_PLAN.md](docs/DEVELOPMENT_PLA
 ## Development Status
 
 Current Version:
-v0.7 (In Development)
+v0.8 (In Development)
 
 Notifyer is actively developed and may contain bugs, unexpected behavior, and questionable design decisions made at 2 AM.
 

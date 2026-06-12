@@ -26,6 +26,37 @@
     <string name="mode_light">Sáng</string>
     <string name="mode_dark">Tối</string>
 
+    <string name="settings_title">Cài đặt</string>
+    <string name="settings_desc">Cài đặt</string>
+    <string name="section_appearance">Giao diện</string>
+    <string name="section_notifications">Thông báo</string>
+    <string name="section_data">Dữ liệu</string>
+    <string name="section_about">Giới thiệu</string>
+    <string name="setting_theme">Chủ đề</string>
+    <string name="setting_theme_sub">Sáng / Tối / Hệ thống + tông màu</string>
+    <string name="setting_language">Ngôn ngữ</string>
+    <string name="lang_system">Theo hệ thống</string>
+    <string name="lang_en">English</string>
+    <string name="lang_vi">Tiếng Việt</string>
+    <string name="setting_sound">Âm thanh &amp; rung</string>
+    <string name="setting_sound_sub">Mở cài đặt thông báo hệ thống</string>
+    <string name="setting_export">Xuất lời nhắc</string>
+    <string name="setting_import">Nhập lời nhắc</string>
+    <string name="setting_clear">Xoá tất cả lời nhắc</string>
+    <string name="setting_version">Phiên bản</string>
+    <string name="version_format">v%1$s</string>
+    <string name="setting_github">Mã nguồn</string>
+    <string name="setting_github_sub">github.com/dybe1028/Notifyer</string>
+    <string name="export_done">Đã xuất lời nhắc</string>
+    <string name="export_failed">Xuất thất bại</string>
+    <string name="import_done">Đã nhập %1$d lời nhắc</string>
+    <string name="import_failed">Nhập thất bại — file không hợp lệ</string>
+    <string name="clear_all_title">Xoá tất cả lời nhắc?</string>
+    <string name="clear_all_message">Sẽ xoá mọi lời nhắc, không thể hoàn tác.</string>
+    <string name="clear_all_done">Đã xoá tất cả lời nhắc</string>
+    <string name="error_no_app">Không có app xử lý được</string>
+    <string name="easter_dev">Dev đang xử lí, bạn bình tĩnh 😅</string>
+
     <string name="title_new_timer">Hẹn giờ mới</string>
     <string name="title_new_schedule">Lịch nhắc mới</string>
     <string name="hint_message">Nội dung</string>
@@ -49,6 +80,10 @@
     <string name="item_schedule_repeat">%1$s\n⏰ %2$s · 🔁 %3$s</string>
     <string name="item_app_trigger">📱 %1$s → %2$s</string>
     <string name="item_app_trigger_count">📱 %1$s ×%2$d → %3$s</string>
+
+    <string name="sub_timer_scheduled">%1$s · đã hẹn</string>
+    <string name="sub_schedule_repeat">%1$s · 🔁 %2$s</string>
+    <string name="sub_app_count">%1$s · mỗi %2$d lần mở</string>
 
     <string name="title_new_app_trigger">Nhắc theo app mới</string>
     <string name="hint_app">Ứng dụng</string>

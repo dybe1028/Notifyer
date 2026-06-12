@@ -27,6 +27,37 @@
     <string name="mode_light">Light</string>
     <string name="mode_dark">Dark</string>
 
+    <string name="settings_title">Settings</string>
+    <string name="settings_desc">Settings</string>
+    <string name="section_appearance">Appearance</string>
+    <string name="section_notifications">Notifications</string>
+    <string name="section_data">Data</string>
+    <string name="section_about">About</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_sub">Light / Dark / System + accent colour</string>
+    <string name="setting_language">Language</string>
+    <string name="lang_system">System default</string>
+    <string name="lang_en">English</string>
+    <string name="lang_vi">Tiếng Việt</string>
+    <string name="setting_sound">Sound &amp; vibration</string>
+    <string name="setting_sound_sub">Open system notification settings</string>
+    <string name="setting_export">Export reminders</string>
+    <string name="setting_import">Import reminders</string>
+    <string name="setting_clear">Clear all reminders</string>
+    <string name="setting_version">Version</string>
+    <string name="version_format">v%1$s</string>
+    <string name="setting_github">Source code</string>
+    <string name="setting_github_sub">github.com/dybe1028/Notifyer</string>
+    <string name="export_done">Reminders exported</string>
+    <string name="export_failed">Export failed</string>
+    <string name="import_done">Imported %1$d reminder(s)</string>
+    <string name="import_failed">Import failed — invalid file</string>
+    <string name="clear_all_title">Clear all reminders?</string>
+    <string name="clear_all_message">This removes every reminder and cannot be undone.</string>
+    <string name="clear_all_done">All reminders cleared</string>
+    <string name="error_no_app">No app can handle this</string>
+    <string name="easter_dev">The dev is on it — please be patient 😅</string>
+
     <string name="title_new_timer">New Timer</string>
     <string name="title_new_schedule">New Schedule</string>
     <string name="hint_message">Message</string>
@@ -50,6 +81,10 @@
     <string name="item_schedule_repeat">%1$s\n⏰ %2$s · 🔁 %3$s</string>
     <string name="item_app_trigger">📱 %1$s → %2$s</string>
     <string name="item_app_trigger_count">📱 %1$s ×%2$d → %3$s</string>
+
+    <string name="sub_timer_scheduled">%1$s · scheduled</string>
+    <string name="sub_schedule_repeat">%1$s · 🔁 %2$s</string>
+    <string name="sub_app_count">%1$s · every %2$d opens</string>
 
     <string name="title_new_app_trigger">New App Trigger</string>
     <string name="hint_app">App</string>
