@@ -42,11 +42,16 @@ Originally started as a simple countdown reminder project, Notifyer has grown in
 ### UI
 
 * Material 3 interface
-* Theme picker: Light / Dark / System mode and four accent colours
 * Outlined text fields, dropdown menus, and Material date/time pickers
 * Custom action popup (Run / Edit / Delete) right under the tapped reminder
 * Multi-language: English and Vietnamese
 * Toast feedback and smooth list animations
+
+### Themes
+
+* Light, Dark, or System (follows the device) mode
+* Four accent colours: Blue, Green, Purple, Orange
+* Pick from the palette button in the top corner — your choice is saved and applied on the next launch
 
 ### Easter Eggs
 
@@ -92,10 +97,11 @@ Created by DyBe
 
 Special thanks to:
 
+* thanhmobiledev
 * Android Studio
 * Kotlin
-* Coffee
-* Stack Overflow
+* ChatGPT
+* Claude
 * Random debugging sessions
 * Dell Latitude fighting for its life
 
